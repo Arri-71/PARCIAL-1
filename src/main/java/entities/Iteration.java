@@ -1,5 +1,6 @@
 package entities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,12 @@ public class Iteration {
 
     public void addActivity(Activity activity) {
         this.activities.add(activity);
+    }
+    public void setDateInit(LocalDate dateInit) {
+        this.dateInit = dateInit;
+    }
+    public void setDateEnd(LocalDate dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
 }

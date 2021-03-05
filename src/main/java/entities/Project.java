@@ -3,7 +3,6 @@ package entities;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 public class Project {
 
     private String name;
@@ -11,14 +10,18 @@ public class Project {
     private LocalDate dateEnd;
     private Group group;
     private List<Iteration> iterations;
+    private ArrayList<Student> members;
+    private Student leader;
 
-    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
+    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group, ArrayList<Student> members,
+                   Student leader) {
         this.name = name;
         this.dateInit = dateInit;
         this.dateEnd = dateEnd;
         this.group = group;
+        this.members= members;
+        this.leader= leader;
         this.iterations = new ArrayList<>();
-
         group.addProject(this);
     }
 
@@ -34,19 +37,24 @@ public class Project {
         this.dateEnd = dateEnd;
     }
 
+    public void addMember(Student member) { this.members.add(member);}
+
     /**
      * Evaluate if a project is active.
      *
      * @return false if the project has open activities or the dateEnd is before than the system date.
      */
     public boolean isActive() {
-        return false;
-    }
-    if(this.iterations.size()==0||this.dateEnd.isBefore(LocalDate.now())){
-        return false;
-    }else {
-        return true;
+        if(this.iterations.size()==0||this.dateEnd.isBefore(LocalDate.now())){
+            return false;
+        }else {
+            return true;
+        }
     }
 
 
 }
+
+
+
+
