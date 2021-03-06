@@ -93,5 +93,5 @@ ademas de hacerlas privadas para tener cierto control sobre ellas, se les tiene 
 mas avanzadas o complejas logrando la reutilizacion y flexibilidad de las variables, lo cual, con publicas no
 se lograria.
 2)la ocultacion de informacion, se refiere a ocultar o no mostrar ciertas variables dentro del codigo fuente,aunque tambien se puede utilizar como una medida de seguridad, no muy efectiva, se utiliza mas que nada para lograr una mejor comprension del codigo y se implementa utlizando el private y los meteodos set/ get, esto para adquierir mas flexibilidad por lo que no se puede utilizar el public 
-3)
-4)
+![image](https://user-images.githubusercontent.com/78420224/110189429-0afce880-7ded-11eb-9d27-f93654f1d715.png)
+
