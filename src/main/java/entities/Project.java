@@ -13,8 +13,7 @@ public class Project {
     private ArrayList<Student> members;
     private Student leader;
 
-    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group, ArrayList<Student> members,
-                   Student leader) {
+    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
         this.name = name;
         this.dateInit = dateInit;
         this.dateEnd = dateEnd;
@@ -24,7 +23,9 @@ public class Project {
         this.iterations = new ArrayList<>();
         group.addProject(this);
     }
-
+    public List<Iteration> getIterations() {
+        return iterations;
+    }
     public void addIteration(Iteration iteration) {
         this.iterations.add(iteration);
     }
@@ -54,6 +55,7 @@ public class Project {
 
 
 }
+
 
 
 

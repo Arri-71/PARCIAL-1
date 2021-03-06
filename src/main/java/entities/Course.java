@@ -20,10 +20,9 @@ public class Course {
         private String shortName;
         private int credits;
 
-        public Course(String shortName, int credits) {
+        public Course(String shortName) {
             this.shortName = shortName;
             this.credits = credits;
         }
 
     }
-}

@@ -11,7 +11,7 @@ public class SabanaResearch {
     private List<Course> courses;
     private List<Student> students;
 
-    public SabanaResearch(List<Group> groups, List<Summary> summaries, List<Course> courses, List<Student> students) {
+    public SabanaResearch(List<Group> groups) {
         this.groups = groups;
         this.summaries = new ArrayList<>();
         this.courses= new ArrayList<>();
@@ -52,7 +52,7 @@ public class SabanaResearch {
         int counter =0;
         for (int i=0; i<this.groups.size();i++){
             for (int j=0; j<this.groups.get(j).getProjects().size(); j++){
-                Project p= this.groups.get(j).getProjects().get(j);
+                Project p= (Project) this.groups.get(j).getProjects().get(j);
                 if(p.isActive()){
                     counter++;
                 }
@@ -64,7 +64,7 @@ public class SabanaResearch {
         int counter =0;
         for (int i=0; i<this.groups.size();i++){
             for (int j=0; j<this.groups.get(j).getProjects().size(); j++){
-                Project p= this.groups.get(j).getProjects().get(j);
+                Project p= (Project) this.groups.get(j).getProjects().get(j);
                 if(p.isActive()){
                     for(int k=0; k<p.getIterations().size();k++){
                         for(int n=0;n<p.getIterations().get(k).getActivities().size(); n++){
@@ -83,7 +83,7 @@ public class SabanaResearch {
         int counter =0;
         for (int i=0; i<this.groups.size();i++){
             for (int j=0; j<this.groups.get(j).getProjects().size(); j++){
-                Project p= this.groups.get(j).getProjects().get(j);
+                Project p= (Project) this.groups.get(j).getProjects().get(j);
                 if(p.isActive()){
                     for(int k=0; k<p.getIterations().size();k++){
                         for(int n=0;n<p.getIterations().get(k).getActivities().size(); n++){
@@ -129,3 +129,5 @@ public class SabanaResearch {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+}

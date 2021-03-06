@@ -9,13 +9,16 @@ public class Iteration {
     private String goal;
     private Project project;
     private List<Activity> activities;
+    private LocalDate dateInit;
+    private LocalDate dateEnd;
 
     public Iteration(String goal, Project project) {
         this.goal = goal;
         this.project = project;
         this.activities = new ArrayList<>();
-
         project.addIteration(this);
+        this.dateInit = dateInit;
+        this.dateEnd = dateEnd;
     }
 
     public void addActivity(Activity activity) {
@@ -27,5 +30,7 @@ public class Iteration {
     public void setDateEnd(LocalDate dateEnd) {
         this.dateEnd = dateEnd;
     }
-
+    public List<Activity> getActivities() {
+        return activities;
+    }
 }

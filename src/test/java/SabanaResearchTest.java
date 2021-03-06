@@ -29,8 +29,8 @@ public class SabanaResearchTest {
 
     @BeforeEach
     public void setup() {
-        //
-        course.add(new Course("holiwis"));
+
+
 
         // Create groups
         groups.add(new Group("Medical Science Group"));

@@ -8,14 +8,23 @@ public class Student {
     private String LastName;
     private String email;
     private ArrayList<Activity> assignedActivities;
+    private ArrayList<Course> approved ;
 
 
-    public Student(int code, String name, String lastName, String email, ArrayList<Activity> assignedActivities) {
+
+    public Student(int code, String name, String lastName, String email) {
         this.code = code;
         this.name = name;
         LastName = lastName;
         this.email = email;
-        this.assignedActivities = assignedActivities;
+        this.assignedActivities = new ArrayList<>();
+        this.approved= new ArrayList<>();
     }
 
+    public void asignActivity(Activity activity) {
+        this.assignedActivities.add(activity);
+    } //**
+    public void addCourseApproved(Course course) {
+        this.approved.add(course);
+    } //**
 }
