@@ -95,3 +95,5 @@ se lograria.
 2)la ocultacion de informacion, se refiere a ocultar o no mostrar ciertas variables dentro del codigo fuente,aunque tambien se puede utilizar como una medida de seguridad, no muy efectiva, se utiliza mas que nada para lograr una mejor comprension del codigo y se implementa utlizando el private y los meteodos set/ get, esto para adquierir mas flexibilidad por lo que no se puede utilizar el public 
 ![image](https://user-images.githubusercontent.com/78420224/110189429-0afce880-7ded-11eb-9d27-f93654f1d715.png)
 
+![image](https://user-images.githubusercontent.com/78420224/110189628-abeba380-7ded-11eb-9ae3-276f0a8d1a20.png)
+me salio eso en el push final 
