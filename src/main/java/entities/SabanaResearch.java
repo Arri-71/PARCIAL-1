@@ -130,4 +130,10 @@ public class SabanaResearch {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
+    public SabanaResearch(List<Group> groups) {
+        this.groups = groups;
+        this.summaries = new ArrayList<>();
+        this.courses= new ArrayList<>();
+        this.students=new ArrayList<>();
+    }
 }

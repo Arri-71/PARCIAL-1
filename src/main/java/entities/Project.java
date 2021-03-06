@@ -52,6 +52,14 @@ public class Project {
             return true;
         }
     }
+    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
+        this.name = name;
+        this.dateInit = dateInit;
+        this.dateEnd = dateEnd;
+        this.group = group;
+        this.iterations = new ArrayList<>();
+        group.addProject(this);
+    }
 
 
 }

@@ -37,5 +37,9 @@ public class Group {
     public List<Project> getProjects() {
         return projects;
     }
-
+    public Group(String name)  {
+        this.name = name;
+        this.name=name;
+        this.projects = new ArrayList<>();
+    }
 }
