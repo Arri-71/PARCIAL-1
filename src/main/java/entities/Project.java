@@ -3,6 +3,7 @@ package entities;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Project {
 
     private String name;
@@ -10,22 +11,17 @@ public class Project {
     private LocalDate dateEnd;
     private Group group;
     private List<Iteration> iterations;
-    private ArrayList<Student> members;
-    private Student leader;
 
     public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
         this.name = name;
         this.dateInit = dateInit;
         this.dateEnd = dateEnd;
         this.group = group;
-        this.members= members;
-        this.leader= leader;
         this.iterations = new ArrayList<>();
+
         group.addProject(this);
     }
-    public List<Iteration> getIterations() {
-        return iterations;
-    }
+
     public void addIteration(Iteration iteration) {
         this.iterations.add(iteration);
     }
@@ -38,27 +34,22 @@ public class Project {
         this.dateEnd = dateEnd;
     }
 
-    public void addMember(Student member) { this.members.add(member);}
-
     /**
      * Evaluate if a project is active.
      *
-     * @return false if the project has open activities or the dateEnd is before than the system date.
+     * @return false if the project has not open activities or the dateEnd is before than the system date.
      */
     public boolean isActive() {
-        if(this.iterations.size()==0||this.dateEnd.isBefore(LocalDate.now())){
-            return false;
-        }else {
-            return true;
+        int i = 0;
+        boolean result = false;
+
+        for(i = 0; i < iterations.size(); i++) {
+            if(iterations.get(i).countOpenActivities() || dateEnd.isBefore(LocalDate.now())) {
+                result = true;
+            }
         }
-    }
-    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
-        this.name = name;
-        this.dateInit = dateInit;
-        this.dateEnd = dateEnd;
-        this.group = group;
-        this.iterations = new ArrayList<>();
-        group.addProject(this);
+
+        return result;
     }
 
 

@@ -11,16 +11,17 @@ public class Activity {
     private String name;
     private String state;
     private Iteration iteration;
-    public ArrayList<Log> logs;
-    private ArrayList<Student> students;//**
 
     public Activity(String name, String state, Iteration iteration) {
         this.name = name;
         this.state = state;
         this.iteration = iteration;
-        this.logs=logs;
+
         this.iteration.addActivity(this);
-        this.students= students;
+    }
+
+    public String getState() {
+        return state;
     }
 
     /**
@@ -28,26 +29,15 @@ public class Activity {
      *
      * @return true if the activity is in state pending or active, otherwise return false.
      */
-    public boolean isActive() {//**
-        if(this.state==ACTIVE_STATE){
-            return true;
-        }else {
-            return false;
+    public boolean isActive() {
+        boolean result = false;
+
+        if(getState().equals(ACTIVE_STATE) || getState().equals(PENDING_STATE)) {
+            result = true;
         }
-    }
-    public void addStudent(Student student) {
-        this.students.add(student);
-    }//**
-    public void addLog(Log log) {
-        this.logs.add(log);
-    }//**
 
-    public ArrayList<Student> getStudents() {//**
-        return students;
-    }
-
-    public void setStudents(ArrayList<Student> students) {//**
-        this.students = students;
+        return result;
     }
 
 }
+

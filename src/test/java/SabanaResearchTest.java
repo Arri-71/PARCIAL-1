@@ -3,7 +3,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.namespace.QName;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,8 +17,6 @@ public class SabanaResearchTest {
     private List<Group> groups;
     private List<Project> projects;
     private List<Iteration> iterations;
-    private List<Course> course;
-
 
     public SabanaResearchTest() {
         this.groups = new ArrayList<>();
@@ -30,12 +27,9 @@ public class SabanaResearchTest {
     @BeforeEach
     public void setup() {
 
-
-
         // Create groups
         groups.add(new Group("Medical Science Group"));
         groups.add(new Group("Economics Science Group"));
-
 
         // Create projects
         projects.add(new Project("COVID 19 Vaccine", LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), groups.get(0))); // OPEN date but with all the activities CLOSED
